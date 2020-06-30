@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Duck Hunt</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="map">
+      <input type="checkbox" id="duck_1" class="duck-duck" />
+      <label class="duck duck1" for="duck_1">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_2" class="duck-duck" />
+      <label class="duck duck2" for="duck_2">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_3" class="duck-duck" />
+      <label class="duck duck3" for="duck_3">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_4" class="duck-duck" />
+      <label class="duck duck4" for="duck_4">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_5" class="duck-duck" />
+      <label class="duck duck5" for="duck_5">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_6" class="duck-duck" />
+      <label class="duck duck6" for="duck_6">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_7" class="duck-duck" />
+      <label class="duck duck7" for="duck_7">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_8" class="duck-duck" />
+      <label class="duck duck8" for="duck_8">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_9" class="duck-duck" />
+      <label class="duck duck9" for="duck_9">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_10" class="duck-duck" />
+      <label class="duck duck10" for="duck_10">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_11" class="duck-duck" />
+      <label class="duck duck11" for="duck_11">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_12" class="duck-duck" />
+      <label class="duck duck12" for="duck_12">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_13" class="duck-duck" />
+      <label class="duck duck13" for="duck_13">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_14" class="duck-duck" />
+      <label class="duck duck14" for="duck_14">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <input type="checkbox" id="duck_15" class="duck-duck" />
+      <label class="duck duck15" for="duck_15">
+        <img src="img/duck.webp" alt="duck" />
+      </label>
+
+      <div class="dog-center">
+        <img src="img/dog.png" alt="dog-center">
+      </div>
+
+      <div class="dog-right">
+        <img src="img/dog-right.gif" alt="dog-right" />
+      </div>
+      <div class="dog-left">
+        <img src="img/dog-left.gif" alt="dog-left" />
+      </div>
+
+      <div class="play-again">
+        <a href="game.html">Играть еще раз</a>
+      </div>
+
+      <div class="count"></div>
+    </div>
+
+    <script>
+     $('.duck-duck').change(function(){
+      if ($(this).is(':checked')) {
+        $('div.dog-center').addClass("dog-anim");
+        setTimeout(function(){
+          $("div.dog-center.dog-anim").removeClass("dog-anim");
+        }, 1000);
+    }
+});
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,403 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+ pointer-events: none; 
+}
+
+html,
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	display: flex;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(136,112,0,1) 50%, rgba(60,188,252,1) 50%);
+    cursor: crosshair;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.map {
+	width: 100%;
+	height: 100%;
+	max-height: 768px;
+	background-image: url(../img/bg.png);
+	background-position: center bottom;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.start-game {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 34px;
+    font-weight: bold;
+    width: 320px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+    border: 4px solid #00CC00;
+}
+
+.start-game a {
+	text-decoration: none;
+	color: red;
+}
+
+.start-game a:hover {
+	color: darkred;
+	transition: 1s;
+}
+
+.duck {
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: -100px;
+	cursor: crosshair;
+}
+
+.duck img{
+	width: 60px;
+	height: 60px;
+}
+
+@keyframes duck-anim-1 {
+	0% {left: -100px;
+	    top: 50%;}
+	25% {left: 25%;
+	     top: 20%;}
+	50% {left: 50%;
+	     top: 40%;}
+	75% {left: 75%;
+	     top: 30%;}
+	100% {left: 100%;
+	      top: 60%;}
+}
+
+@keyframes duck-anim-2 {
+	0% {left: -100px;
+	    top: 70%;}
+	25% {left: 25%;
+	     top: 40%;}
+	50% {left: 50%;
+	     top: 15%;}
+	75% {left: 75%;
+	     top: 25%;}
+	100% {left: 100%;
+	      top: 35%;}
+}
+
+@keyframes duck-anim-3 {
+	0% {left: -100px;
+	    top: 10%;}
+	25% {left: 25%;
+	     top: 25%;}
+	50% {left: 50%;
+	     top: 40%;}
+	75% {left: 75%;
+	     top: 30%;}
+	100% {left: 100%;
+	      top: 10%;}
+}
+
+@keyframes duck-kill {
+	0% {opacity: 1;}
+	50% {opacity: 0.5;}
+	100% {opacity: 0;
+	      visibility: hidden;}
+}
+
+.duck1 {
+	animation: duck-anim-1 5s ease 2s 1 normal;
+}
+
+.duck2 {
+	animation: duck-anim-2 7s ease-in 4s 1 normal;
+}
+
+.duck3 {
+	animation: duck-anim-3 8s ease 6s 1 normal;
+}
+
+.duck4 {
+	animation: duck-anim-3 6s ease-out 8s 1 normal;
+}
+
+.duck5 {
+	animation: duck-anim-2 5s ease 10s 1 normal;
+}
+
+.duck6 {
+	animation: duck-anim-2 5s ease-in 12s 1 normal;
+}
+
+.duck7 {
+	animation: duck-anim-1 8s ease-out 14s 1 normal;
+}
+
+.duck8 {
+	animation: duck-anim-3 6s ease-in 16s 1 normal;
+}
+
+.duck9 {
+	animation: duck-anim-2 6s ease 18s 1 normal;
+}
+
+.duck10 {
+	animation: duck-anim-1 7s ease-out 20s 1 normal;
+}
+
+.duck11 {
+	animation: duck-anim-3 5s ease-in 22s 1 normal;
+}
+
+.duck12 {
+	animation: duck-anim-2 6s ease 24s 1 normal;
+}
+
+.duck13 {
+	animation: duck-anim-1 7s ease-out 26s 1 normal;
+}
+
+.duck14 {
+	animation: duck-anim-2 6s ease 28s 1 normal;
+}
+
+.duck15 {
+	animation: duck-anim-1 7s ease-out 30s 1 normal;
+}
+
+.duck-duck:checked + .duck {
+	animation: duck-kill 2s linear;
+}
+
+input[type="checkbox"] {
+	visibility: hidden;
+	position: absolute;
+	left: -99999px;
+	z-index: -5;
+}
+
+input[type="checkbox"]:checked {
+	counter-increment: score;
+}
+
+.count::after {
+	content: counter(score);
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	margin: auto;
+	font-size: 40px;
+	font-weight: bold;
+	width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    background-color: black;
+    border-radius: 10px;
+    border: 4px solid #00CC00;
+}
+
+.dog-center {
+	position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 210px;
+    opacity: 0;
+}
+
+.dog-center img {
+	width: 150px;
+	height: auto;
+}
+
+.dog-anim {
+	animation: dog-center 1s linear;
+}
+
+@keyframes dog-center {
+	0% {opacity: 0.5;}
+	50% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+.dog-right {
+	position: absolute;
+    bottom: 10%;
+    left: -150px;
+	animation: dog-running-right 10s linear infinite;
+	animation-delay: 3s;
+}
+
+.dog-right img { 
+    width: 140px;
+    height: 140px;
+}
+
+@keyframes dog-running-right {
+	0% {left: -150px;}
+	25% {left: 50%;}
+	50% {left: 100%;}
+	100% {left: 110%;}
+}
+
+.dog-left {
+	position: absolute;
+	bottom: 10%;
+	right: -150px;
+	animation: dog-running-left 10s linear infinite;
+	animation-delay: 3s;
+}
+
+.dog-left img { 
+	width: 110px;
+	height: 110px;
+}
+
+@keyframes dog-running-left {
+	0% {right: -150px;}
+	25% {right: -150px;}
+	50% {right: -150px;}
+	75% {right: 50%;}
+	100% {right: 100%;}
+	
+}
+
+.play-again {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 34px;
+    font-weight: bold;
+    width: 320px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+    border: 4px solid #00CC00;
+    animation: restart 2s linear 40s forwards;
+    visibility: hidden;
+}
+
+.play-again a {
+	color: red;
+	text-decoration: none;
+}
+
+.play-again a:hover {
+	color: darkred;
+	transition: 1s;
+}
+
+@keyframes restart {
+	0% {visibility: visible;
+	    opacity: 0;}
+	50% {opacity: 0.5;}
+	100% {opacity: 1;
+		  visibility: visible;}
+	
+}
+
+@media (max-width: 600px) {
+.map {
+	background-position: -115% bottom;
+}
+
+.duck1 {
+	animation: duck-anim-1 3s ease 2s 1 normal;
+}
+
+.duck2 {
+	animation: duck-anim-2 2s ease-in 4s 1 normal;
+}
+
+.duck3 {
+	animation: duck-anim-3 2s ease 6s 1 normal;
+}
+
+.duck4 {
+	animation: duck-anim-3 3s ease-out 8s 1 normal;
+}
+
+.duck5 {
+	animation: duck-anim-2 3s ease 10s 1 normal;
+}
+
+.duck6 {
+	animation: duck-anim-2 2s ease-in 12s 1 normal;
+}
+
+.duck7 {
+	animation: duck-anim-1 2s ease-out 14s 1 normal;
+}
+
+.duck8 {
+	animation: duck-anim-3 3s ease-in 16s 1 normal;
+}
+
+.duck9 {
+	animation: duck-anim-2 3s ease 18s 1 normal;
+}
+
+.duck10 {
+	animation: duck-anim-1 3s ease-out 20s 1 normal;
+}
+
+.duck11 {
+	animation: duck-anim-3 2s ease-in 22s 1 normal;
+}
+
+.duck12 {
+	animation: duck-anim-2 2s ease 24s 1 normal;
+}
+
+.duck13 {
+	animation: duck-anim-1 3s ease-out 26s 1 normal;
+}
+
+.duck14 {
+	animation: duck-anim-2 2s ease 28s 1 normal;
+}
+
+.duck15 {
+	animation: duck-anim-1 3s ease-out 30s 1 normal;
+}
+
+.dog-left {
+	animation: dog-running-left 4s linear infinite;
+}
+
+.dog-right {
+	animation: dog-running-right 4s linear infinite;
+}
+
+.play-again {
+	animation: restart 2s linear 35s forwards;
+}
+
+}
+
